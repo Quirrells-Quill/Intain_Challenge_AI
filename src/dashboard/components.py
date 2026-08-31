@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 """
 Streamlit Reusable UI Widgets — components.py
 """
@@ -90,3 +93,4 @@ def get_dynamic_ai_takeaway(prompt: str) -> str:
         return response.text
     except Exception as e:
         return f"AI Analyst Module Temporarily Offline. (Error: {str(e)})"
+

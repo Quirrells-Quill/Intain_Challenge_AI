@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 """
 4_Verification_Queue.py
 """
@@ -43,3 +46,4 @@ if not exceptions.empty:
                 st.error(f"Loan {selected_loan} rejected.")
 else:
     st.success("The exception queue is entirely clear!")
+

@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 """
 Streamlit Main Entry — app.py
 """
@@ -29,3 +32,4 @@ This dashboard serves as the primary interface for human-in-the-loop verificatio
 """)
 
 st.info("👈 Please select a page from the sidebar to begin.")
+

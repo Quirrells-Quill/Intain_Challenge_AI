@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 """
 5_LLM_Copilot.py
 """
@@ -73,3 +76,4 @@ with col_audit:
             st.warning("Audit DB exists but is currently locked or unreadable.")
     else:
         st.warning("Audit DB not found. Run Stage 8 Copilot to generate logs.")
+

@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 """
 2_Loan_Explorer.py
 """
@@ -95,3 +98,4 @@ else:
             """)
         else:
             st.success("Loan risk is within acceptable bounds (Default Prob <= 0.35). No counterfactual required.")
+

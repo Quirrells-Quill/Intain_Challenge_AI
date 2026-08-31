@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 """
 6_Drift_Error_Analysis.py
 """
@@ -80,3 +83,4 @@ with col_error:
     * **False Positives (420):** Model predicted default, but loan survived. Often driven by borrowers with high DTI who aggressively prioritized mortgage payments over revolving credit.
     * **False Negatives (180):** Model missed the default. Driven predominantly by sudden, unobservable income shocks (e.g., localized tech layoffs not yet reflected in macro unemployment data).
     """)
+

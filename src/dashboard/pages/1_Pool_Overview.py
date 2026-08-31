@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 """
 1_Pool_Overview.py
 """
@@ -88,3 +91,4 @@ with col_chart2:
             avg_prob = df['prob_12m_default'].mean() * 100
             prompt = f"The GBDT ensemble predicts an average 12m default probability of {avg_prob:.2f}%. The distribution is a long-tail with most loans under 10%. Is this healthy for a prime portfolio?"
             st.write(get_dynamic_ai_takeaway(prompt))
+

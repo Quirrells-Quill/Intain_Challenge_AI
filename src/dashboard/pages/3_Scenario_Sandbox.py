@@ -1,3 +1,6 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 """
 3_Scenario_Sandbox.py
 """
@@ -61,3 +64,4 @@ with col_plot:
     fig.update_xaxes(showgrid=True, gridcolor='#222222')
     fig.update_yaxes(showgrid=True, gridcolor='#222222')
     st.plotly_chart(fig, use_container_width=True)
+
