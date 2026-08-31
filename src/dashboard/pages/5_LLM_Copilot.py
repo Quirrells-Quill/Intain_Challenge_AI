@@ -36,9 +36,14 @@ with col_chat:
         
         try:
             import google.generativeai as genai
-            # Initialize with the user-provided key
-            genai.configure(api_key="AIzaSyAAjPLFZHkxBnvdtL5unu92Ly2aSyNEVfk")
-            # Strict update to requested model per prompt instructions
+            
+            # Securely fetch from Streamlit Secrets
+            api_key = st.secrets.get("GEMINI_API_KEY")
+            if not api_key:
+                st.error("Error: GEMINI_API_KEY not found in Streamlit Secrets. Please configure it in your deployment settings.")
+                st.stop()
+                
+            genai.configure(api_key=api_key)
             model = genai.GenerativeModel('models/gemini-3.6-flash')
             
             with st.spinner("Analyzing..."):

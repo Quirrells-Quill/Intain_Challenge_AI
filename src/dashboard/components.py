@@ -77,7 +77,12 @@ def get_dynamic_ai_takeaway(prompt: str) -> str:
     """Generates a dynamic, live AI takeaway using the provided Gemini API key."""
     try:
         import google.generativeai as genai
-        genai.configure(api_key="AIzaSyAAjPLFZHkxBnvdtL5unu92Ly2aSyNEVfk")
+        
+        api_key = st.secrets.get("GEMINI_API_KEY")
+        if not api_key:
+            return "AI Analyst Module Temporarily Offline. (Error: API Key missing in Streamlit secrets)."
+            
+        genai.configure(api_key=api_key)
         model = genai.GenerativeModel('models/gemini-3.6-flash')
         # Instruct the model to be a hyper-professional quant analyst
         sys_prompt = "You are a quantitative risk analyst for a hedge fund. Analyze the following data in exactly 2 concise, professional sentences. Do not use filler words."
