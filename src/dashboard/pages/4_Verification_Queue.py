@@ -9,7 +9,7 @@ import streamlit as st
 from src.dashboard.components import load_data_safe
 
 st.set_page_config(layout="wide", page_title="Verification Queue")
-st.title("?? Exception Verification Queue")
+st.title("🚨 Exception Verification Queue")
 
 df = load_data_safe("data/processed/master_pool.parquet").to_pandas()
 exceptions = df[df['exception_required'] == True]
