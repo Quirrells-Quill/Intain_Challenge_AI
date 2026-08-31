@@ -27,7 +27,7 @@ jobs:
     - name: Run Pytest Compliance Harness
       run: |
         # Evaluates the strict 13-column schema, temporal leakage, and LLM guardrails
-        pytest tests/test_master_compliance.py -v --disable-warnings
+        PYTHONPATH="." pytest tests/test_master_compliance.py -v --disable-warnings
         
     - name: Execute Fast-Dev End-to-End Pipeline
       run: |
