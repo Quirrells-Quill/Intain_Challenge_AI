@@ -90,3 +90,22 @@ The following chronological log details the interplay between the human architec
 - **What Worked**: Auto-generating Polars schema aggregations, boilerplate class architectures, and Plotly UI components provided 10x velocity.
 - **What Failed**: The AI struggled occasionally with edge-case financial mathematical definitions (like passing `cause_of_interest` in older versions of `lifelines`) and required prompt correction on memory-heavy `for-loops`.
 - **Correction Velocity**: Providing exact traceback errors to the AI yielded near-instant deterministic fixes, proving that Agentic workflows shine when paired with rigid QA smoke tests.
+## Phase 2: Enterprise CI/CD & Cloud Deployment (Final Stage)
+
+### Prompt 11: CI/CD Pipeline Generation
+**Request**: *"Write a GitHub Actions pipeline that installs dependencies and runs the Pytest compliance harness to prevent PR regression."*
+**AI Tool**: Antigravity (Gemini Pro)
+**Status**: ACCEPTED
+**Human-in-the-Loop Review**: Human had to modify the PYTHONPATH context for Pytest in the Ubuntu runner to ensure src module resolution.
+
+### Prompt 12: Streamlit Cloud Dependency Resolution
+**Request**: *"Streamlit cloud is failing to compile Pillow from source due to zlib headers. Fix the requirements."*
+**AI Tool**: Antigravity (Gemini Pro)
+**Status**: ACCEPTED
+**Human-in-the-Loop Review**: AI correctly identified the root cause as strict version pinning against incompatible Python 3.12 cloud environments. Unpinned requirements enabled pre-compiled wheels, reducing cloud boot time from failure to <60 seconds.
+
+### Prompt 13: Secrets Management & Security
+**Request**: *"The Gemini API key threw a 403 error because it was leaked on GitHub. Secure the app."*
+**AI Tool**: Antigravity (Gemini Pro)
+**Status**: ACCEPTED
+**Human-in-the-Loop Review**: AI stripped hardcoded keys from components.py and 5_LLM_Copilot.py, implementing st.secrets vault integration to satisfy enterprise security protocols.

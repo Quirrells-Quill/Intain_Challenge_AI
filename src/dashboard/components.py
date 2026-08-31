@@ -80,6 +80,7 @@ def get_dynamic_ai_takeaway(prompt: str) -> str:
     """Generates a dynamic, live AI takeaway using the provided Gemini API key."""
     try:
         import google.generativeai as genai
+        import time
         
         api_key = st.secrets.get("GEMINI_API_KEY")
         if not api_key:
@@ -87,10 +88,18 @@ def get_dynamic_ai_takeaway(prompt: str) -> str:
             
         genai.configure(api_key=api_key)
         model = genai.GenerativeModel('models/gemini-3.6-flash')
-        # Instruct the model to be a hyper-professional quant analyst
         sys_prompt = "You are a Chief Quantitative Risk Officer for a hedge fund. Analyze the following data in exactly 2 concise, professional sentences. Do not use filler words."
-        response = model.generate_content(f"{sys_prompt}\n\nData: {prompt}")
-        return response.text
+        
+        # Simple retry logic for 429 Free Tier Rate Limits
+        for attempt in range(3):
+            try:
+                response = model.generate_content(f"{sys_prompt}\n\nData: {prompt}")
+                return response.text
+            except Exception as e:
+                if "429" in str(e) and attempt < 2:
+                    time.sleep(5)  # Wait 5 seconds and retry
+                    continue
+                raise e
     except Exception as e:
         return f"AI Analyst Module Temporarily Offline. (Error: {str(e)})"
 
