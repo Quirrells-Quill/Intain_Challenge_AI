@@ -1,0 +1,82 @@
+[
+  {
+    "phase": "Stage 1: Data Intelligence",
+    "prompt": "Implement the Data Intelligence module in `src/profiling/`. Calculate securitization metrics (WAC, WAM) and detect data drift using Polars.",
+    "ai_tool": "Antigravity (Gemini Pro)",
+    "output_status": "ACCEPTED",
+    "human_review_notes": "Clean Polars aggregations. Handled weighted averages correctly.",
+    "error_mode": null
+  },
+  {
+    "phase": "Stage 2: Feature Engineering",
+    "prompt": "Use `polars` window functions grouping by `loan_id` and ordering by `reporting_month` to create temporal rolling window features like 3-month rolling DPD.",
+    "ai_tool": "Antigravity (Gemini Pro)",
+    "output_status": "MODIFIED",
+    "human_review_notes": "AI generated standard rolling windows but missed sorting by date prior to grouping. Human added `.sort('reporting_month')` before `rolling()`.",
+    "error_mode": null
+  },
+  {
+    "phase": "Stage 3: Predictive Modeling",
+    "prompt": "Implement an Ensemble GBDT Architecture (XGBoost, LightGBM) to predict 12-month default. Handle imbalanced classes using scale_pos_weight.",
+    "ai_tool": "Antigravity (Gemini Pro)",
+    "output_status": "REJECTED",
+    "human_review_notes": "AI used standard train_test_split. Human rejected and rewrote using a strict time-aware grouped split to prevent temporal data leakage.",
+    "error_mode": "Failed temporal leakage constraint"
+  },
+  {
+    "phase": "Stage 4: Survival Modeling",
+    "prompt": "Fit a Fine-Gray competing risk model evaluating Default vs. Prepayment using lifelines AalenJohansenFitter.",
+    "ai_tool": "Antigravity (Gemini Pro)",
+    "output_status": "REJECTED",
+    "human_review_notes": "AI passed `cause_of_interest` to `__init__`, which is deprecated in newer versions of lifelines. Human corrected the API to pass `event_of_interest` into the `fit()` method.",
+    "error_mode": "Deprecated API argument usage"
+  },
+  {
+    "phase": "Stage 5: Anomaly Detection",
+    "prompt": "Ingest configs/validation_rules.json to flag hard deterministic accounting violations like negative balances.",
+    "ai_tool": "Antigravity (Gemini Pro)",
+    "output_status": "ACCEPTED",
+    "human_review_notes": "Correctly parsed the JSON rules and vectorized the bounds checking logic.",
+    "error_mode": null
+  },
+  {
+    "phase": "Stage 6: Monte Carlo Scenarios",
+    "prompt": "Implement a 1,000-iteration Monte Carlo simulation engine with correlated parameter perturbation for macro scenarios.",
+    "ai_tool": "Antigravity (Gemini Pro)",
+    "output_status": "REJECTED",
+    "human_review_notes": "AI attempted to loop row-by-row in Python leading to OOM and extreme latency. Human rewrote the core to use NumPy broadcasting over the entire pool simultaneously.",
+    "error_mode": "High memory consumption loop (Performance)"
+  },
+  {
+    "phase": "Stage 7: Explainability",
+    "prompt": "Compute Global TreeSHAP across the multi-task prediction targets and generate Plotly bar charts.",
+    "ai_tool": "Antigravity (Gemini Pro)",
+    "output_status": "MODIFIED",
+    "human_review_notes": "AI returned 3D arrays for random forest SHAP values. Human added explicit array slicing `shap_vals[:, :, 1]` to extract the correct target class.",
+    "error_mode": null
+  },
+  {
+    "phase": "Stage 7: Counterfactuals",
+    "prompt": "Build a Counterfactual Explanation Engine determining the minimum actionable feature perturbation required to transition a loan to approved.",
+    "ai_tool": "Antigravity (Gemini Pro)",
+    "output_status": "ACCEPTED",
+    "human_review_notes": "Excellent greedy search implementation respecting immutable features like vintage and loan_id.",
+    "error_mode": null
+  },
+  {
+    "phase": "Stage 8: LLM Copilot",
+    "prompt": "Create a Gemini API wrapper that enforces structured JSON output using Pydantic schemas.",
+    "ai_tool": "Antigravity (Gemini Pro)",
+    "output_status": "MODIFIED",
+    "human_review_notes": "AI successfully used generation_config. Human injected a mock_mode fallback so CI/CD smoke tests pass without an active internet connection.",
+    "error_mode": null
+  },
+  {
+    "phase": "Stage 8: Guardrails",
+    "prompt": "Write a guardrail to regex-scan LLM narrative text for numerical claims and verify they match the actual ML inference probability within a 0.03 tolerance.",
+    "ai_tool": "Antigravity (Gemini Pro)",
+    "output_status": "ACCEPTED",
+    "human_review_notes": "Solid regex extraction handling both explicit decimal floats and percentage string formats seamlessly.",
+    "error_mode": null
+  }
+]

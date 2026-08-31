@@ -1,0 +1,35 @@
+name: Intain-Sight CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+        
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Run Pytest Compliance Harness
+      run: |
+        # Evaluates the strict 13-column schema, temporal leakage, and LLM guardrails
+        pytest tests/test_master_compliance.py -v --disable-warnings
+        
+    - name: Execute Fast-Dev End-to-End Pipeline
+      run: |
+        # Verifies that data generation, LightGBM training, and SHAP extraction run without memory faults
+        PYTHONPATH="." python src/pipeline/run_all.py --fast-dev

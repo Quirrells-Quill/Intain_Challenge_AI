@@ -1,0 +1,26 @@
+data_paths:
+  train_data: "data/train.parquet"
+  test_data: "data/test.parquet"
+  static_data: "data/static_pool_data.parquet"
+  servicer_updates: "data/servicer_updates/"
+
+model_params:
+  random_seed: 42
+  cv_folds: 5
+  hyperparameter_grids:
+    xgboost:
+      max_depth: [3, 5, 7]
+      learning_rate: [0.01, 0.1]
+      n_estimators: [100, 500]
+    lightgbm:
+      num_leaves: [31, 63]
+      learning_rate: [0.01, 0.1]
+
+mlflow:
+  tracking_uri: "sqlite:///mlruns.db"
+  experiment_name: "intain_sight_baseline"
+
+llm_settings:
+  model_name: "gemini-1.5-pro"
+  temperature: 0.1
+  structured_schema_paths: "configs/schemas/"

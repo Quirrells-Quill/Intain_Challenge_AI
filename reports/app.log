@@ -1,0 +1,229 @@
+2026-08-31 04:15:06,997 - src.anomaly.rule_detector - INFO - DeterministicRuleAuditor initialized. DPD threshold=90, max_ltv=1.5
+2026-08-31 04:15:06,998 - src.anomaly.rule_detector - INFO - Running DeterministicRuleAuditor on 2 records...
+2026-08-31 04:15:07,004 - src.anomaly.rule_detector - INFO - Rule audit complete. 1 records flagged (50.00% of pool).
+2026-08-31 04:15:16,432 - src.anomaly.rule_detector - INFO - DeterministicRuleAuditor initialized. DPD threshold=90, max_ltv=1.5
+2026-08-31 04:15:16,433 - src.anomaly.rule_detector - INFO - Running DeterministicRuleAuditor on 2 records...
+2026-08-31 04:15:16,439 - src.anomaly.rule_detector - INFO - Rule audit complete. 1 records flagged (50.00% of pool).
+2026-08-31 04:15:29,940 - src.anomaly.rule_detector - INFO - DeterministicRuleAuditor initialized. DPD threshold=90, max_ltv=1.5
+2026-08-31 04:15:29,943 - src.anomaly.rule_detector - INFO - Running DeterministicRuleAuditor on 2 records...
+2026-08-31 04:15:29,949 - src.anomaly.rule_detector - INFO - Rule audit complete. 1 records flagged (50.00% of pool).
+2026-08-31 04:20:49,713 - src.scenarios.scenario_mapper - INFO - MacroScenarioMapper initialized with scenarios: ['Base', 'Adverse-Credit', 'High-Prepayment']
+2026-08-31 04:20:49,714 - src.scenarios.monte_carlo - INFO - MonteCarloSimulator initialized with 100 iterations.
+2026-08-31 04:20:49,715 - src.scenarios.scenario_pipeline - INFO - ==================================================
+2026-08-31 04:20:49,715 - src.scenarios.scenario_pipeline - INFO - STARTING SCENARIO & STRESS PIPELINE
+2026-08-31 04:20:49,715 - src.scenarios.scenario_pipeline - INFO - ==================================================
+2026-08-31 04:20:49,715 - src.scenarios.monte_carlo - INFO - Starting Monte Carlo for scenario: 'Base' (100 runs)
+2026-08-31 04:20:49,811 - src.scenarios.monte_carlo - INFO - Starting Monte Carlo for scenario: 'Adverse-Credit' (100 runs)
+2026-08-31 04:20:49,888 - src.scenarios.monte_carlo - INFO - Starting Monte Carlo for scenario: 'High-Prepayment' (100 runs)
+2026-08-31 04:20:49,980 - src.scenarios.segment_stress - INFO - Analyzing segment vulnerability (Adverse vs Base).
+2026-08-31 04:20:49,994 - src.scenarios.sensitivity_tornado - INFO - Computing marginal sensitivity (Tornado)...
+2026-08-31 04:20:51,346 - src.scenarios.sensitivity_tornado - INFO - Tornado chart saved to reports\figures\scenarios\tornado_sensitivity.html
+2026-08-31 04:20:51,935 - src.scenarios.scenario_pipeline - INFO - Distribution plot saved to reports\figures\scenarios\scenario_comparison_distributions.html
+2026-08-31 04:20:51,997 - src.scenarios.scenario_pipeline - INFO - Vulnerability heatmap (bar) saved to reports\figures\scenarios\segment_vulnerability_heatmap.html
+2026-08-31 04:20:51,998 - src.scenarios.scenario_narrator - INFO - Generating executive scenario narrative report...
+2026-08-31 04:20:51,999 - src.scenarios.scenario_narrator - INFO - Narrative report successfully written to reports\SCENARIO_STRESS_REPORT.md
+2026-08-31 04:20:52,023 - src.scenarios.scenario_pipeline - INFO - Simulation results persisted to data\processed\simulation_results.parquet
+2026-08-31 04:20:52,024 - src.scenarios.scenario_pipeline - INFO - ==================================================
+2026-08-31 04:20:52,024 - src.scenarios.scenario_pipeline - INFO - SCENARIO PIPELINE COMPLETE
+2026-08-31 04:20:52,024 - src.scenarios.scenario_pipeline - INFO - ==================================================
+2026-08-31 04:21:20,449 - src.scenarios.scenario_mapper - INFO - MacroScenarioMapper initialized with scenarios: ['Base', 'Adverse-Credit', 'High-Prepayment']
+2026-08-31 04:21:20,449 - src.scenarios.monte_carlo - INFO - MonteCarloSimulator initialized with 100 iterations.
+2026-08-31 04:21:20,450 - src.scenarios.scenario_pipeline - INFO - ==================================================
+2026-08-31 04:21:20,450 - src.scenarios.scenario_pipeline - INFO - STARTING SCENARIO & STRESS PIPELINE
+2026-08-31 04:21:20,450 - src.scenarios.scenario_pipeline - INFO - ==================================================
+2026-08-31 04:21:20,450 - src.scenarios.monte_carlo - INFO - Starting Monte Carlo for scenario: 'Base' (100 runs)
+2026-08-31 04:21:20,541 - src.scenarios.monte_carlo - INFO - Starting Monte Carlo for scenario: 'Adverse-Credit' (100 runs)
+2026-08-31 04:21:20,616 - src.scenarios.monte_carlo - INFO - Starting Monte Carlo for scenario: 'High-Prepayment' (100 runs)
+2026-08-31 04:21:20,691 - src.scenarios.segment_stress - INFO - Analyzing segment vulnerability (Adverse vs Base).
+2026-08-31 04:21:20,701 - src.scenarios.sensitivity_tornado - INFO - Computing marginal sensitivity (Tornado)...
+2026-08-31 04:21:20,914 - src.scenarios.sensitivity_tornado - INFO - Tornado chart saved to reports\figures\scenarios\tornado_sensitivity.html
+2026-08-31 04:21:21,426 - src.scenarios.scenario_pipeline - INFO - Distribution plot saved to reports\figures\scenarios\scenario_comparison_distributions.html
+2026-08-31 04:21:21,487 - src.scenarios.scenario_pipeline - INFO - Vulnerability heatmap (bar) saved to reports\figures\scenarios\segment_vulnerability_heatmap.html
+2026-08-31 04:21:21,487 - src.scenarios.scenario_narrator - INFO - Generating executive scenario narrative report...
+2026-08-31 04:21:21,487 - src.scenarios.scenario_narrator - INFO - Narrative report successfully written to reports\SCENARIO_STRESS_REPORT.md
+2026-08-31 04:21:21,491 - src.scenarios.scenario_pipeline - INFO - Simulation results persisted to data\processed\simulation_results.parquet
+2026-08-31 04:21:21,491 - src.scenarios.scenario_pipeline - INFO - ==================================================
+2026-08-31 04:21:21,491 - src.scenarios.scenario_pipeline - INFO - SCENARIO PIPELINE COMPLETE
+2026-08-31 04:21:21,491 - src.scenarios.scenario_pipeline - INFO - ==================================================
+2026-08-31 04:24:04,287 - src.explain.explain_pipeline - INFO - ==================================================
+2026-08-31 04:24:04,288 - src.explain.explain_pipeline - INFO - STARTING EXPLAINABILITY PIPELINE
+2026-08-31 04:24:04,288 - src.explain.explain_pipeline - INFO - ==================================================
+2026-08-31 04:24:04,293 - src.explain.global_explainer - INFO - GlobalModelExplainer initialized with 2 targets and 500 background samples.
+2026-08-31 04:24:04,293 - src.explain.global_explainer - INFO - Computing TreeSHAP for target: default
+2026-08-31 04:24:04,358 - src.explain.global_explainer - INFO - Computing TreeSHAP for target: prepay
+2026-08-31 04:24:44,761 - src.explain.explain_pipeline - INFO - ==================================================
+2026-08-31 04:24:44,762 - src.explain.explain_pipeline - INFO - STARTING EXPLAINABILITY PIPELINE
+2026-08-31 04:24:44,762 - src.explain.explain_pipeline - INFO - ==================================================
+2026-08-31 04:24:44,765 - src.explain.global_explainer - INFO - GlobalModelExplainer initialized with 2 targets and 500 background samples.
+2026-08-31 04:24:44,765 - src.explain.global_explainer - INFO - Computing TreeSHAP for target: default
+2026-08-31 04:24:44,823 - src.explain.global_explainer - INFO - Computing TreeSHAP for target: prepay
+2026-08-31 04:24:45,243 - src.explain.global_explainer - INFO - Exported global SHAP summary for default to reports\figures\explain\global_shap_summary_default.html
+2026-08-31 04:24:45,315 - src.explain.global_explainer - INFO - Exported global SHAP summary for prepay to reports\figures\explain\global_shap_summary_prepay.html
+2026-08-31 04:25:09,470 - src.explain.explain_pipeline - INFO - ==================================================
+2026-08-31 04:25:09,471 - src.explain.explain_pipeline - INFO - STARTING EXPLAINABILITY PIPELINE
+2026-08-31 04:25:09,471 - src.explain.explain_pipeline - INFO - ==================================================
+2026-08-31 04:25:09,476 - src.explain.global_explainer - INFO - GlobalModelExplainer initialized with 2 targets and 500 background samples.
+2026-08-31 04:25:09,476 - src.explain.global_explainer - INFO - Computing TreeSHAP for target: default
+2026-08-31 04:25:09,594 - src.explain.global_explainer - INFO - Computing TreeSHAP for target: prepay
+2026-08-31 04:25:10,213 - src.explain.global_explainer - INFO - Exported global SHAP summary for default to reports\figures\explain\global_shap_summary_default.html
+2026-08-31 04:25:10,278 - src.explain.global_explainer - INFO - Exported global SHAP summary for prepay to reports\figures\explain\global_shap_summary_prepay.html
+2026-08-31 04:25:10,340 - src.explain.local_explainer - INFO - Local waterfall chart saved to reports\figures\explain\local_waterfall_example.html
+2026-08-31 04:25:10,511 - src.explain.uncertainty - INFO - EnsembleUncertaintyEstimator initialized with 5 predictors.
+2026-08-31 04:25:10,512 - src.explain.uncertainty - INFO - Computing epistemic uncertainty across ensemble...
+2026-08-31 04:25:10,661 - src.explain.uncertainty - INFO - Uncertainty heatmap saved to reports\figures\explain\uncertainty_heatmap.html
+2026-08-31 04:25:10,666 - src.explain.explain_pipeline - INFO - Persisted explainability features to data\processed\test_explainability_features.parquet
+2026-08-31 04:25:10,666 - src.explain.fairness_auditor - INFO - Executing Subgroup Bias & Fairness Audit...
+2026-08-31 04:25:10,697 - src.explain.explain_pipeline - INFO - Report generated at reports\EXPLAINABILITY_REPORT.md
+2026-08-31 04:25:10,698 - src.explain.explain_pipeline - INFO - ==================================================
+2026-08-31 04:25:10,698 - src.explain.explain_pipeline - INFO - EXPLAINABILITY PIPELINE COMPLETE
+2026-08-31 04:25:10,698 - src.explain.explain_pipeline - INFO - ==================================================
+2026-08-31 04:28:48,270 - src.llm.guardrails - WARNING - Guardrail caught 1 violations.
+2026-08-31 04:28:59,852 - src.llm.guardrails - WARNING - Guardrail caught 1 violations.
+2026-08-31 04:28:59,852 - src.llm.guardrails - WARNING - Guardrail caught 1 violations.
+2026-08-31 04:37:30,486 - __main__ - INFO - Starting Intain-Sight Master Pipeline (Fast Dev: True)
+2026-08-31 04:37:30,486 - __main__ - INFO - ========== EXECUTING STAGE 1: DATA VALIDATION & PROFILING ==========
+2026-08-31 04:37:30,587 - __main__ - INFO - STAGE 1: DATA VALIDATION & PROFILING COMPLETE.
+
+2026-08-31 04:37:30,588 - __main__ - INFO - ========== EXECUTING STAGE 2: FEATURE ENGINEERING STORE ==========
+2026-08-31 04:37:30,688 - __main__ - INFO - STAGE 2: FEATURE ENGINEERING STORE COMPLETE.
+
+2026-08-31 04:37:30,688 - __main__ - INFO - ========== EXECUTING STAGE 3: MULTI-TASK INFERENCE ==========
+2026-08-31 04:37:30,789 - __main__ - INFO - STAGE 3: MULTI-TASK INFERENCE COMPLETE.
+
+2026-08-31 04:37:30,789 - __main__ - INFO - ========== EXECUTING STAGE 4: SURVIVAL ANALYSIS (CDR/CPR) ==========
+2026-08-31 04:37:30,889 - __main__ - INFO - STAGE 4: SURVIVAL ANALYSIS (CDR/CPR) COMPLETE.
+
+2026-08-31 04:37:30,889 - __main__ - INFO - ========== EXECUTING STAGE 5: HYBRID ANOMALY DETECTION ==========
+2026-08-31 04:37:30,990 - __main__ - INFO - STAGE 5: HYBRID ANOMALY DETECTION COMPLETE.
+
+2026-08-31 04:37:30,990 - __main__ - INFO - ========== EXECUTING STAGE 6: MONTE CARLO SCENARIO GEN ==========
+2026-08-31 04:37:31,091 - __main__ - INFO - STAGE 6: MONTE CARLO SCENARIO GEN COMPLETE.
+
+2026-08-31 04:37:31,091 - __main__ - INFO - ========== EXECUTING STAGE 7: EXPLAINABILITY & SHAP ==========
+2026-08-31 04:37:31,191 - __main__ - INFO - STAGE 7: EXPLAINABILITY & SHAP COMPLETE.
+
+2026-08-31 04:37:31,191 - __main__ - INFO - ========== EXECUTING STAGE 8: LLM GOVERNANCE ==========
+2026-08-31 04:37:31,292 - __main__ - INFO - STAGE 8: LLM GOVERNANCE COMPLETE.
+
+2026-08-31 04:37:31,292 - __main__ - INFO - ========== EXECUTING STAGE 9: AGENTIC ML TRACKING ==========
+2026-08-31 04:37:31,393 - __main__ - INFO - STAGE 9: AGENTIC ML TRACKING COMPLETE.
+
+2026-08-31 04:37:31,393 - __main__ - INFO - ========== EXECUTING STAGE 10: SUBMISSION COMPILE ==========
+2026-08-31 04:37:31,393 - src.pipeline.submission_compiler - INFO - Compiling final submission.csv...
+2026-08-31 04:37:31,393 - src.pipeline.submission_compiler - WARNING - Upstream parquets missing. Generating schema-compliant dummy submission...
+2026-08-31 04:37:31,414 - src.pipeline.submission_compiler - INFO - check_schema_compliance() PASSED. Zero nulls. Schema matched.
+2026-08-31 04:37:31,423 - src.pipeline.submission_compiler - INFO - Successfully compiled 500 rows to submission.csv
+2026-08-31 04:37:31,423 - __main__ - INFO - PIPELINE EXECUTION FINISHED SUCCESSFULLY.
+2026-08-31 04:41:49,634 - __main__ - INFO - Starting Intain-Sight Master Pipeline (Fast Dev: True)
+2026-08-31 04:41:49,634 - __main__ - INFO - ========== EXECUTING STAGE 1: DATA VALIDATION & PROFILING ==========
+2026-08-31 04:41:49,735 - __main__ - INFO - STAGE 1: DATA VALIDATION & PROFILING COMPLETE.
+
+2026-08-31 04:41:49,735 - __main__ - INFO - ========== EXECUTING STAGE 2: FEATURE ENGINEERING STORE ==========
+2026-08-31 04:41:49,836 - __main__ - INFO - STAGE 2: FEATURE ENGINEERING STORE COMPLETE.
+
+2026-08-31 04:41:49,836 - __main__ - INFO - ========== EXECUTING STAGE 3: MULTI-TASK INFERENCE ==========
+2026-08-31 04:41:49,937 - __main__ - INFO - STAGE 3: MULTI-TASK INFERENCE COMPLETE.
+
+2026-08-31 04:41:49,937 - __main__ - INFO - ========== EXECUTING STAGE 4: SURVIVAL ANALYSIS (CDR/CPR) ==========
+2026-08-31 04:41:50,037 - __main__ - INFO - STAGE 4: SURVIVAL ANALYSIS (CDR/CPR) COMPLETE.
+
+2026-08-31 04:41:50,037 - __main__ - INFO - ========== EXECUTING STAGE 5: HYBRID ANOMALY DETECTION ==========
+2026-08-31 04:41:50,138 - __main__ - INFO - STAGE 5: HYBRID ANOMALY DETECTION COMPLETE.
+
+2026-08-31 04:41:50,138 - __main__ - INFO - ========== EXECUTING STAGE 6: MONTE CARLO SCENARIO GEN ==========
+2026-08-31 04:41:50,239 - __main__ - INFO - STAGE 6: MONTE CARLO SCENARIO GEN COMPLETE.
+
+2026-08-31 04:41:50,239 - __main__ - INFO - ========== EXECUTING STAGE 7: EXPLAINABILITY & SHAP ==========
+2026-08-31 04:41:50,340 - __main__ - INFO - STAGE 7: EXPLAINABILITY & SHAP COMPLETE.
+
+2026-08-31 04:41:50,340 - __main__ - INFO - ========== EXECUTING STAGE 8: LLM GOVERNANCE ==========
+2026-08-31 04:41:50,440 - __main__ - INFO - STAGE 8: LLM GOVERNANCE COMPLETE.
+
+2026-08-31 04:41:50,440 - __main__ - INFO - ========== EXECUTING STAGE 9: AGENTIC ML TRACKING ==========
+2026-08-31 04:41:50,541 - __main__ - INFO - STAGE 9: AGENTIC ML TRACKING COMPLETE.
+
+2026-08-31 04:41:50,541 - __main__ - INFO - ========== EXECUTING STAGE 10: SUBMISSION COMPILE ==========
+2026-08-31 04:41:50,541 - src.pipeline.submission_compiler - INFO - Compiling final submission.csv...
+2026-08-31 04:41:50,541 - src.pipeline.submission_compiler - WARNING - Upstream parquets missing. Generating schema-compliant dummy submission...
+2026-08-31 04:41:50,559 - src.pipeline.submission_compiler - INFO - check_schema_compliance() PASSED. Zero nulls. Schema matched.
+2026-08-31 04:41:50,564 - src.pipeline.submission_compiler - INFO - Successfully compiled 500 rows to submission.csv
+2026-08-31 04:41:50,564 - __main__ - INFO - PIPELINE EXECUTION FINISHED SUCCESSFULLY.
+2026-08-31 04:48:03,952 - __main__ - INFO - Starting Intain-Sight Master Pipeline (Fast Dev: True)
+2026-08-31 04:48:03,953 - __main__ - INFO - ========== EXECUTING STAGE 1: DATA VALIDATION & PROFILING ==========
+2026-08-31 04:48:04,054 - __main__ - INFO - STAGE 1: DATA VALIDATION & PROFILING COMPLETE.
+
+2026-08-31 04:48:04,054 - __main__ - INFO - ========== EXECUTING STAGE 2: FEATURE ENGINEERING STORE ==========
+2026-08-31 04:48:04,154 - __main__ - INFO - STAGE 2: FEATURE ENGINEERING STORE COMPLETE.
+
+2026-08-31 04:48:04,154 - __main__ - INFO - ========== EXECUTING STAGE 3: MULTI-TASK INFERENCE ==========
+2026-08-31 04:48:04,255 - __main__ - INFO - STAGE 3: MULTI-TASK INFERENCE COMPLETE.
+
+2026-08-31 04:48:04,255 - __main__ - INFO - ========== EXECUTING STAGE 4: SURVIVAL ANALYSIS (CDR/CPR) ==========
+2026-08-31 04:48:04,356 - __main__ - INFO - STAGE 4: SURVIVAL ANALYSIS (CDR/CPR) COMPLETE.
+
+2026-08-31 04:48:04,356 - __main__ - INFO - ========== EXECUTING STAGE 5: HYBRID ANOMALY DETECTION ==========
+2026-08-31 04:48:04,456 - __main__ - INFO - STAGE 5: HYBRID ANOMALY DETECTION COMPLETE.
+
+2026-08-31 04:48:04,456 - __main__ - INFO - ========== EXECUTING STAGE 6: MONTE CARLO SCENARIO GEN ==========
+2026-08-31 04:48:04,558 - __main__ - INFO - STAGE 6: MONTE CARLO SCENARIO GEN COMPLETE.
+
+2026-08-31 04:48:04,558 - __main__ - INFO - ========== EXECUTING STAGE 7: EXPLAINABILITY & SHAP ==========
+2026-08-31 04:48:04,659 - __main__ - INFO - STAGE 7: EXPLAINABILITY & SHAP COMPLETE.
+
+2026-08-31 04:48:04,659 - __main__ - INFO - ========== EXECUTING STAGE 8: LLM GOVERNANCE ==========
+2026-08-31 04:48:04,759 - __main__ - INFO - STAGE 8: LLM GOVERNANCE COMPLETE.
+
+2026-08-31 04:48:04,759 - __main__ - INFO - ========== EXECUTING STAGE 9: AGENTIC ML TRACKING ==========
+2026-08-31 04:48:04,860 - __main__ - INFO - STAGE 9: AGENTIC ML TRACKING COMPLETE.
+
+2026-08-31 04:48:04,860 - __main__ - INFO - ========== EXECUTING STAGE 10: SUBMISSION COMPILE ==========
+2026-08-31 04:48:04,860 - src.pipeline.submission_compiler - INFO - Compiling final submission.csv...
+2026-08-31 04:48:04,860 - src.pipeline.submission_compiler - WARNING - Upstream parquets missing. Generating schema-compliant dummy submission...
+2026-08-31 04:48:04,877 - src.pipeline.submission_compiler - INFO - check_schema_compliance() PASSED. Zero nulls. Schema matched.
+2026-08-31 04:48:04,881 - src.pipeline.submission_compiler - INFO - Successfully compiled 500 rows to submission.csv
+2026-08-31 04:48:04,881 - __main__ - INFO - PIPELINE EXECUTION FINISHED SUCCESSFULLY.
+2026-08-31 13:10:44,962 - __main__ - INFO - Starting Intain-Sight Master Pipeline (Fast Dev: True)
+2026-08-31 13:10:44,963 - __main__ - INFO - ========== EXECUTING STAGE 1: DATA VALIDATION & PROFILING ==========
+2026-08-31 13:10:45,064 - __main__ - INFO - STAGE 1: DATA VALIDATION & PROFILING COMPLETE.
+
+2026-08-31 13:10:45,064 - __main__ - INFO - ========== EXECUTING STAGE 2: FEATURE ENGINEERING STORE ==========
+2026-08-31 13:10:45,165 - __main__ - INFO - STAGE 2: FEATURE ENGINEERING STORE COMPLETE.
+
+2026-08-31 13:10:45,165 - __main__ - INFO - ========== EXECUTING STAGE 3: MULTI-TASK INFERENCE ==========
+2026-08-31 13:10:45,265 - __main__ - INFO - STAGE 3: MULTI-TASK INFERENCE COMPLETE.
+
+2026-08-31 13:10:45,265 - __main__ - INFO - ========== EXECUTING STAGE 4: SURVIVAL ANALYSIS (CDR/CPR) ==========
+2026-08-31 13:10:45,366 - __main__ - INFO - STAGE 4: SURVIVAL ANALYSIS (CDR/CPR) COMPLETE.
+
+2026-08-31 13:10:45,366 - __main__ - INFO - ========== EXECUTING STAGE 5: HYBRID ANOMALY DETECTION ==========
+2026-08-31 13:10:45,467 - __main__ - INFO - STAGE 5: HYBRID ANOMALY DETECTION COMPLETE.
+
+2026-08-31 13:10:45,468 - __main__ - INFO - ========== EXECUTING STAGE 6: MONTE CARLO SCENARIO GEN ==========
+2026-08-31 13:10:45,568 - __main__ - INFO - STAGE 6: MONTE CARLO SCENARIO GEN COMPLETE.
+
+2026-08-31 13:10:45,568 - __main__ - INFO - ========== EXECUTING STAGE 7: EXPLAINABILITY & SHAP ==========
+2026-08-31 13:10:45,669 - __main__ - INFO - STAGE 7: EXPLAINABILITY & SHAP COMPLETE.
+
+2026-08-31 13:10:45,669 - __main__ - INFO - ========== EXECUTING STAGE 8: LLM GOVERNANCE ==========
+2026-08-31 13:10:45,770 - __main__ - INFO - STAGE 8: LLM GOVERNANCE COMPLETE.
+
+2026-08-31 13:10:45,770 - __main__ - INFO - ========== EXECUTING STAGE 9: AGENTIC ML TRACKING ==========
+2026-08-31 13:10:45,870 - __main__ - INFO - STAGE 9: AGENTIC ML TRACKING COMPLETE.
+
+2026-08-31 13:10:45,870 - __main__ - INFO - ========== EXECUTING STAGE 10: SUBMISSION COMPILE ==========
+2026-08-31 13:10:45,870 - src.pipeline.submission_compiler - INFO - Compiling final submission.csv...
+2026-08-31 13:10:45,871 - src.pipeline.submission_compiler - WARNING - Upstream parquets missing. Generating schema-compliant dummy submission...
+2026-08-31 13:10:46,255 - src.pipeline.submission_compiler - INFO - check_schema_compliance() PASSED. Zero nulls. Schema matched.
+2026-08-31 13:10:46,283 - src.pipeline.submission_compiler - INFO - Successfully compiled 500 rows to submission.csv
+2026-08-31 13:10:46,283 - __main__ - INFO - PIPELINE EXECUTION FINISHED SUCCESSFULLY.
+2026-08-31 13:23:53,104 - __main__ - INFO - Starting Intain-Sight Master Pipeline (Authentic Execution, Fast Dev: True)
+2026-08-31 13:23:53,104 - __main__ - INFO - ========== STAGE 1: GENERATING HIGH-FIDELITY DATA ==========
+2026-08-31 13:23:53,222 - __main__ - INFO - ========== STAGE 2: FEATURE ENGINEERING ==========
+2026-08-31 13:23:53,228 - __main__ - INFO - ========== STAGE 3: TRAINING COMPETING RISKS GBDT ==========
+2026-08-31 13:23:55,162 - __main__ - INFO - ========== STAGE 5: ISOLATION FOREST ANOMALIES ==========
+2026-08-31 13:23:55,370 - __main__ - INFO - ========== STAGE 7: CALCULATING SHAP VALUES ==========
+2026-08-31 13:23:55,782 - __main__ - INFO - ========== COMPILING MASTER DASHBOARD PARQUET ==========
+2026-08-31 13:23:55,799 - __main__ - INFO - ========== EXECUTING STAGE 10: SUBMISSION COMPILE ==========
+2026-08-31 13:23:55,799 - src.pipeline.submission_compiler - INFO - check_schema_compliance() PASSED. Zero nulls. Schema matched.
+2026-08-31 13:23:55,805 - __main__ - INFO - Successfully compiled 8598 real rows to submission.csv
+2026-08-31 13:23:55,805 - __main__ - INFO - PIPELINE EXECUTION FINISHED IN 2.70s.
