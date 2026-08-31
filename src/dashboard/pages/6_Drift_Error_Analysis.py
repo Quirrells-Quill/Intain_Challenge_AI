@@ -9,6 +9,7 @@ import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 import numpy as np
+from src.dashboard.components import get_dynamic_ai_takeaway
 
 st.set_page_config(layout="wide", page_title="Drift & Error Analysis")
 st.title("📈 Drift & Error Analysis")
@@ -50,8 +51,9 @@ with col_drift:
     fig_drift.update_yaxes(showgrid=True, gridcolor='#222222')
     st.plotly_chart(fig_drift, use_container_width=True)
     
-    if max(psi_values) > 0.2:
-        st.warning(f"**Drift Alert:** 'interest_rate' exhibits significant drift (PSI > 0.2). This is expected due to the macroeconomic rate hikes in 2025.")
+    with st.expander("🤖 AI Drift Assessment (Live Generation)"):
+        prompt = f"Assess this PSI Drift Data. Features: {features}. Corresponding PSI values: {psi_values}. Note any feature > 0.2 as significant drift requiring retraining."
+        st.write(get_dynamic_ai_takeaway(prompt))
 
 with col_error:
     st.subheader("Error Analysis: Default Prediction (12m)")
@@ -78,9 +80,6 @@ with col_error:
     fig_cm.update_traces(textfont=dict(family='monospace', size=16))
     st.plotly_chart(fig_cm, use_container_width=True)
     
-    st.info("""
-    **Error Insights:**
-    * **False Positives (420):** Model predicted default, but loan survived. Often driven by borrowers with high DTI who aggressively prioritized mortgage payments over revolving credit.
-    * **False Negatives (180):** Model missed the default. Driven predominantly by sudden, unobservable income shocks (e.g., localized tech layoffs not yet reflected in macro unemployment data).
-    """)
-
+    with st.expander("🤖 AI Error Assessment (Live Generation)"):
+        prompt = f"Assess this False Positive vs False Negative ratio on a mortgage default model. True Negatives: {z[0][0]}, False Positives: {z[0][1]}, False Negatives: {z[1][0]}, True Positives: {z[1][1]}. Explain why False Positives are generally less dangerous than False Negatives in credit risk."
+        st.write(get_dynamic_ai_takeaway(prompt))

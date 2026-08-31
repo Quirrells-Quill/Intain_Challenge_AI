@@ -88,7 +88,7 @@ def get_dynamic_ai_takeaway(prompt: str) -> str:
         genai.configure(api_key=api_key)
         model = genai.GenerativeModel('models/gemini-3.6-flash')
         # Instruct the model to be a hyper-professional quant analyst
-        sys_prompt = "You are a quantitative risk analyst for a hedge fund. Analyze the following data in exactly 2 concise, professional sentences. Do not use filler words."
+        sys_prompt = "You are a Chief Quantitative Risk Officer for a hedge fund. Analyze the following data in exactly 2 concise, professional sentences. Do not use filler words."
         response = model.generate_content(f"{sys_prompt}\n\nData: {prompt}")
         return response.text
     except Exception as e:
